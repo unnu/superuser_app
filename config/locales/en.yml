@@ -1,0 +1,108 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  hello: "Hello world"
+  title: Superuser
+  not_authorized: "You are not authorized to access this page"
+
+  time:
+    formats:
+      default: "%Y %b %d | %H:%M"
+
+  layouts:
+    navigation:
+      you: Your Tickets
+      all: All users
+    admin_menu:
+      admin: Admin
+    menu_signed_out:
+      sign_in: Sign in
+    menu_signed_in:
+      profile: Profile
+      logout: Logout
+
+  users:
+    edit:
+      update_profile: Update your Profile
+      submit_button: Update
+      change_password: Change password
+    show:
+      edit: Edit
+      nickname: Nickname
+      email: Email
+      tickets: Tickets
+    update:
+      success: "Successfully updated your Profile"
+
+  tickets:
+    ticket_body:
+      active: active
+      recurring: open-end
+    ticket_data:
+      checkins_left: Checkins left
+      from: From
+      to: To
+    ticket_history:
+      ticket: Ticket
+      checkins_left: CIL
+      ago: ago
+      from: From
+      to: To
+      name: Name
+    tickets_tabs:
+      valid_tickets: Valid Tickets
+      history: History
+    tickets:
+      no_tickets: "You don't have any valid tickets. Please buy a ticket at your host."
+
+  devise:
+    registrations:
+      edit:
+        title: "Edit your Profile"
+        submit_button: "Update my Profile"
+
+  passwords:
+    edit:
+      submit_button: "Change my password"
+      success: "Successfully changed your Password"
+      error: "Could not change your Password"
+    new:
+      recover: "If the email address was correct, we sent you recovery instructions to your mailbox."
+      
+  admin:
+    tickets:
+      index:
+        title: "Tickets for %{name}"
+        no_tickets: This users hasn't bought any tickets yet
+      new:
+        title: "Create a new Ticket for %{name}"
+        submit_button: "Create Ticket"
+        cancel_button: Cancel
+      create:
+        success: "Successfully created Ticket"
+        error: "An error occured while trying to create the ticket"
+      destroy:
+        success: "Successfully deleted Ticket"
+      ticket:
+        update: Update
+        cancel: Cancel
+        destroy: Delete
+        edit: Edit
+        destroy_confirm: "Do you really want to delete this %{ticket}?"
+      ticket_form:
+        recurring: Open-end
+        enabled: enabled
+        disabled: disabled
+    users:
+      destroy: Delete
+      tickets:
+        no_valid_tickets: User has no valid ticket.
+      show:
+        last_sign_in_at: Last sign in
+        admin: Is admin
+        email: Email
+        nickname: Nickname
+        delete_user: Delete User
+        delete_user_info: "Delete a user is permanent and cannot be undone. Also all tickets of the user will be destroyed. Handle with care."
+        delete_confirm: "Do you really want to delete this user?"

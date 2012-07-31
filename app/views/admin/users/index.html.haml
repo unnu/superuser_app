@@ -1,0 +1,6 @@
+.well.form-search
+  = form_tag search_admin_users_path(:format => :js), :method => 'get', :remote => true, :id => 'user_search', :class => 'form-inline' do
+    = text_field_tag 'search', nil, :placeholder => 'Enter Name or Username here'
+    = submit_tag "Search", :class => 'btn'
+
+= render :partial => 'user_list', :locals => {:users => @users}

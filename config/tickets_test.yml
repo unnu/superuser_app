@@ -1,0 +1,14 @@
+- 
+  name: BlockTicket
+  type: BlockTicket
+  valid: 1_M
+  recurring: false
+  checkins: 10
+  priority: 500
+
+-
+  name: TimeTicket
+  type: TimeTicket
+  valid: 1_M
+  recurring: false
+  priority: 1000

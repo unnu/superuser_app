@@ -1,0 +1,12 @@
+.user_list
+  - if users.any?
+    %table.table.table-striped
+      - users.each do |user|
+        %tr
+          %td= link_to user.display_name, admin_user_path(user)
+          %td= user.nickname
+          %td= user.email
+          %td= user.admin ? t('.admin') : ''
+  - else
+    %p
+      = t('.no_user_found')

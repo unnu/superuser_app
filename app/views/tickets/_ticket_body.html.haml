@@ -1,0 +1,12 @@
+%h3
+  = ticket.nice_name
+= render partial: 'admin/tickets/ticket_buttons', locals: {ticket: ticket}
+
+%p
+  - if ticket.recurring?
+    %span.label.label-info= t('.recurring')
+  - if ticket == user.current_ticket
+    %span.label.label-success= t('.active')
+    
+.ticket-data
+  = render partial: 'tickets/ticket_data', locals: {ticket: ticket}

@@ -1,0 +1,3 @@
+- user = ticket.user
+= div_for ticket, :class => "well ticket", 'data-url' => admin_user_ticket_path(user, ticket) do
+  = render partial: 'tickets/ticket_body', locals: {ticket: ticket, user: user}

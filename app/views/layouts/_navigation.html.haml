@@ -1,0 +1,11 @@
+#nav-login
+  %ul.nav
+    - if current_user
+      %li{:class => ('active' if controller_path =~ /^tickets/)} 
+        = link_to(t('.tickets'), tickets_path(current_user)) 
+        = render :partial => 'layouts/admin_menu' if current_user.admin?
+        
+  - if current_user
+    = render :partial => 'layouts/menu_signed_in'
+  - else
+    = render :partial => 'layouts/menu_signed_out'

@@ -1,0 +1,26 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('.name')
+      %th= t('.from')
+      %th= t('.to')
+      %th= t('.checkins_left')
+      %th= t('.created')
+      
+  %tbody
+    - tickets.each do |ticket|
+      %tr
+        %td= ticket.nice_name
+        %td= l(ticket.start_time)
+        %td= l(ticket.end_time)
+        %td= ticket.checkins_left
+        %td
+          = time_ago_in_words(ticket.created_at)
+          =t('.ago')
+        %td
+          - if ticket.recurring_ticket_id
+            .label.notice= t('.recurred')
+        - if current_user.admin
+          %td
+            .admin-buttons
+              = ticket_destroy_link(ticket, t('admin.tickets.ticket.destroy'))

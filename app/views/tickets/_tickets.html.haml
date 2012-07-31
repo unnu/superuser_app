@@ -1,0 +1,10 @@
+- if tickets.any?
+  - tickets.each do |ticket|
+    = render :partial => 'tickets/ticket', :object => ticket
+- else
+  .well
+    - if current_user.admin
+      = t('admin.users.tickets.no_valid_tickets')
+    - else
+      %span.label.label-important= t('important')
+      = t('.no_tickets')

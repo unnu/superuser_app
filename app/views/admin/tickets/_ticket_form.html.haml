@@ -1,0 +1,22 @@
+= form_tag admin_user_ticket_path(:format => :js), :remote => true, :method => :put, :class => 'form-horizontal' do |f|
+  %fieldset
+  
+    .control-group
+      = label :ticket, :start_time, t('.from')
+      = text_field :ticket, :start_time, disabled: true
+      
+    .control-group
+      = label :ticket, :end_time, t('.to')
+      = text_field :ticket, :end_time, disabled: true
+
+    
+    - if ticket.type == "BlockTicket"
+      .control-group
+        = label :ticket, :checkins_left, t('.checkins_left')
+        = select_tag :checkins_left, options_for_select(0..Ticket.default_checkins_for(ticket.name), ticket.checkins_left), :class => 'small'
+   
+    - if Ticket.recurring_for(ticket.name)
+      .control-group
+        = label :ticket, :recurring, t('.recurring')
+        = select_tag :recurring, options_for_select([[t('.enabled'), true], [t('.disabled'), false]], ticket.recurring), :class => 'small'
+    

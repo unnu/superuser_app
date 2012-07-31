@@ -1,0 +1,6 @@
+#nav-signin
+  = form_tag user_session_path, :class => "navbar-signin pull-right form-inline" do
+    = hidden_field_tag :remember_me, 1
+    = text_field_tag "user[email]", nil,  :class => "span3", :placeholder => 'your@email.com'
+    = password_field_tag 'user[password]', nil,  :class => "span2", :placeholder => 'your password'
+    %button.btn#navbar-signin= t('.sign_in')

@@ -1,0 +1,1 @@
+$('#<%= dom_id(@ticket) %>').html("<%= escape_javascript(render partial: 'tickets/ticket_body', locals: {ticket: @ticket, user: @ticket.user}) %>")

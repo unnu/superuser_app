@@ -1,0 +1,5 @@
+.page-header
+  %h1= t('.tickets')
+.row
+  .span10
+    = render :partial => 'tickets/tickets_tabs', :locals => {:user => @user}

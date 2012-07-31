@@ -1,0 +1,9 @@
+%ul.nav.nav-tabs
+  %li.active= link_to(t('.valid_tickets'), '#tickets', 'data-toggle' => 'tab')
+  %li= link_to(t('.history'), '#history', 'data-toggle' => 'tab')
+
+.tab-content
+  #tickets.tab-pane.active
+    = render :partial => 'tickets/tickets', :object => @user.tickets.active.prioritized_for_checkin
+  #history.tab-pane
+    = render :partial => 'tickets/ticket_history', :locals => {:tickets => @user.tickets.expired.prioritized_for_checkin}

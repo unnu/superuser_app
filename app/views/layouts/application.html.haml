@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title= t('title')
+    
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+%body
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        = link_to 'Superuser', root_path, :class => "brand" 
+        = render :partial => 'layouts/navigation'
+
+  .container
+    - flash.each do |key, value| 
+      %div{:class => "alert alert-#{key} flash"}
+        .flash-message= value
+      
+    .content= yield
+  .footer

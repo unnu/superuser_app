@@ -1,0 +1,29 @@
+%h2= t('.update_profile', :name => @user.display_name)
+
+.row
+  .span8
+    = form_for(@user, :url => user_path(@user), :html => {:class => 'form form-horizontal', :method => :put}) do |f|
+      
+      %br
+      
+      - if @user.errors.any?
+        %ul
+        - @user.errors.full_messages.each do |message|
+          %li= message
+    
+      .control-group
+        = f.label :email, class: 'control-label'
+        .controls= f.email_field :email
+      .control-group
+        = f.label :first_name, class: 'control-label'
+        .controls= f.text_field :first_name  
+      .control-group
+        = f.label :last_name, class: 'control-label'
+        .controls= f.text_field :last_name
+    
+      .control-group
+        .controls= link_to t('.change_password'), edit_password_path(@user)
+    
+      .form-actions
+        = f.submit t('.submit_button'), :class => 'btn btn-primary'
+        = link_to t('.cancel'), :back, :class => 'btn cancel-ticket-edit'

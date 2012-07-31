@@ -1,0 +1,47 @@
+- 
+  name: Day
+  type: BlockTicket
+  valid: 1_D
+  recurring: false
+  checkins: 1
+  priority: 500
+
+-
+  name: 10er Flex
+  type: BlockTicket
+  valid: 3_M
+  recurring: false
+  checkins: 10
+  priority: 500
+
+-
+  name: 12er Flex
+  type: BlockTicket
+  valid: 1_M
+  recurring: true
+  checkins: 12
+  priority: 500
+
+-
+  name: Flex
+  type: TimeTicket
+  valid: 1_M
+  recurring: true
+  checkins: nil
+  priority: 1000
+
+-
+  name: Fix
+  type: TimeTicket
+  valid: 1_M
+  recurring: true
+  checkins: nil
+  priority: 1000
+
+-
+  name: Membership
+  type: BlockTicket
+  valid: 1_M
+  recurring: true
+  checkins: 1
+  priority: 10

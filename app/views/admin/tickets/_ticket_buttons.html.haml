@@ -1,0 +1,4 @@
+- if current_user.admin
+  .admin-buttons
+    = ticket_edit_link(ticket, t('admin.tickets.ticket.edit')) if ticket.editable?
+    = ticket_destroy_link(ticket, t('admin.tickets.ticket.destroy'))

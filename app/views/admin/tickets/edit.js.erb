@@ -1,0 +1,2 @@
+$('#<%= dom_id(@ticket) %> .ticket-data').html("<%= escape_javascript(render partial: 'admin/tickets/ticket_form', locals: {ticket: @ticket, user: @ticket.user}) %>")
+$('#<%= dom_id(@ticket) %> .admin-buttons').replaceWith("<%= escape_javascript(render partial: 'admin/tickets/ticket_form_buttons', locals: {ticket: @ticket}) %>")

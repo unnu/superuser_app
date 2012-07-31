@@ -1,0 +1,17 @@
+%h2= t('.title', :name => @ticket.user.display_name)
+%br
+.row
+  .span8
+    = form_for @ticket, :url => admin_user_tickets_path, :html => {:class => 'form-horizontal'} do |f|
+
+      = f.hidden_field :user_id, :value => @ticket.user_id
+  
+      .control-group
+        = f.label :type
+        = f.select :type, Ticket.options_from_yaml
+      .control-group
+        = f.label :start_time
+        = f.datepicker :start_time, :dateFormat => 'dd.mm.yy', :altFormat => 'dd'
+      .form-actions
+        = f.submit t('.submit_button'), :class => 'btn btn-primary'
+        = link_to t('.cancel_button'), :back, :class => 'btn'

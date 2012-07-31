@@ -1,0 +1,4 @@
+- if current_user.admin
+  .admin-buttons
+    = link_to t('admin.tickets.ticket.update'), '#', :class => 'btn btn-primary submit-ticket'
+    = link_to t('admin.tickets.ticket.cancel'), '#', :class => 'btn cancel-ticket-edit'

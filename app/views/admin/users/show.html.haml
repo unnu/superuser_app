@@ -1,0 +1,28 @@
+.page-header
+  %h1= @user.display_name
+
+.row
+  .span6
+    %table.table
+      %tbody
+        %tr
+          %td= t('.nickname')
+          %td= @user.nickname
+        %tr
+          %td= t('.email')
+          %td= @user.email
+        %tr
+          %td= t('.admin')
+          %td= @user.admin
+        %tr
+          %td= t('.last_sign_in_at')
+          %td= l(@user.last_sign_in_at) if @user.last_sign_in_at
+  
+  .span4
+    %h3= t('.delete_user')
+    %p= t('.delete_user_info')
+    %p= button_to t('admin.users.destroy'), admin_user_path(@user), method: :delete, class: 'btn btn-danger', confirm: t('.delete_confirm'), id: 'delete-user'
+  
+  .span10
+    = link_to t(".create_ticket"), new_admin_user_ticket_path(@user), class: 'btn btn-primary pull-right'
+    = render :partial => 'tickets/tickets_tabs', :locals => {:user => @user}

@@ -1,0 +1,12 @@
+.row
+  .span2= t('.from')
+  .span3= l(ticket.start_time)
+  
+.row
+  .span2= t('.to')
+  .span3= l(ticket.end_time)
+
+.row
+  - if ticket.type == "BlockTicket"
+    .span2= t('.checkins_left')
+    .span3.checkins_left= ticket.checkins_left
